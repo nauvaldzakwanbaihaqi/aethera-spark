@@ -53,8 +53,8 @@ const VideoBackground = () => {
 
   return (
     <div
-      className="absolute z-0"
-      style={{ top: "300px", inset: "auto 0 0 0", position: "absolute" }}
+      className="absolute inset-x-0 bottom-0 z-0"
+      style={{ top: "300px" }}
     >
       <video
         ref={videoRef}
