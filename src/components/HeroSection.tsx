@@ -10,20 +10,20 @@ const HeroSection = () => {
         style={{ lineHeight: 0.95, letterSpacing: "-2.46px" }}
       >
         Beyond{" "}
-        <em className="text-muted-foreground">silence,</em> we build{" "}
+        <em className="text-muted-foreground">systems,</em> we craft{" "}
         <em className="text-muted-foreground">the eternal.</em>
       </h1>
 
       {/* Description */}
       <p className="animate-fade-rise-delay mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-        Building platforms for brilliant minds, fearless makers, and thoughtful
-        souls. Through the noise, we craft digital havens for deep work and pure
-        flows.
+        Designing interfaces for future-forward minds, AI-first makers, and
+        elite souls. Amid the chaos, we build neural havens for rapid work and
+        pure flows.
       </p>
 
       {/* CTA */}
       <button className="animate-fade-rise-delay-2 mt-12 rounded-full bg-primary px-14 py-5 text-base text-primary-foreground transition-transform hover:scale-[1.03]">
-        Begin Journey
+        Initialize Project
       </button>
     </section>
   );
