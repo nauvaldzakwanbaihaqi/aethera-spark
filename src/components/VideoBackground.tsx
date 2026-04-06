@@ -53,7 +53,8 @@ const VideoBackground = () => {
 
   return (
     <div
-      className="absolute inset-0 z-0"
+      className="absolute inset-x-0 top-0 z-0"
+      style={{ height: "100vh" }}
     >
       <video
         ref={videoRef}
@@ -64,7 +65,7 @@ const VideoBackground = () => {
         className="h-full w-full object-cover"
         style={{ opacity: 0 }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
     </div>
   );
 };
