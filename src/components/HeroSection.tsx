@@ -1,8 +1,7 @@
 const HeroSection = () => {
   return (
     <section
-      className="relative z-10 flex flex-col items-center justify-center px-6 pb-40 text-center"
-      style={{ paddingTop: "calc(8rem - 75px)" }}
+      className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-40 text-center"
     >
       {/* Headline */}
       <h1
