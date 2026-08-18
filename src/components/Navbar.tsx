@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const navItems = [
   { label: "Home", active: true },
   { label: "Studio", active: false },
@@ -34,9 +36,9 @@ const Navbar = () => {
         </ul>
 
         {/* CTA */}
-        <button className="rounded-full bg-primary px-6 py-2.5 text-sm text-primary-foreground transition-transform hover:scale-[1.03]">
+        <Button className="rounded-full px-6 text-sm transition-transform hover:scale-[1.03]">
           Begin Journey
-        </button>
+        </Button>
       </div>
     </nav>
   );

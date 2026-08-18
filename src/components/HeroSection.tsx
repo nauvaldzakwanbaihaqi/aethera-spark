@@ -1,29 +1,45 @@
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
 const HeroSection = () => {
   return (
     <section
       className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-40 text-center"
     >
       {/* Headline */}
-      <h1
-        className="animate-fade-rise max-w-7xl font-display text-5xl font-normal text-foreground sm:text-7xl md:text-8xl"
-        style={{ lineHeight: 0.95, letterSpacing: "-2.46px" }}
+      <motion.h1 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="font-display text-5xl font-bold tracking-tight text-foreground sm:text-7xl md:text-8xl"
+        style={{ lineHeight: 1.1 }}
       >
-        Beyond{" "}
-        <em className="text-muted-foreground">systems,</em> we craft{" "}
-        <em className="text-muted-foreground">the eternal.</em>
-      </h1>
+        Neural interfaces,
+        <br />
+        designed by <span className="text-primary italic">AI.</span>
+      </motion.h1>
 
-      {/* Description */}
-      <p className="animate-fade-rise-delay mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-        Designing interfaces for future-forward minds, AI-first makers, and
-        elite souls. Amid the chaos, we build neural havens for rapid work and
-        pure flows.
-      </p>
+      {/* Subheadline */}
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl"
+      >
+        Aethera Spark is an intelligent design engine that transforms natural
+        language into production-ready React components and design systems.
+      </motion.p>
 
       {/* CTA */}
-      <button className="animate-fade-rise-delay-2 mt-12 rounded-full bg-primary px-14 py-5 text-base text-primary-foreground transition-transform hover:scale-[1.03]">
-        Initialize Project
-      </button>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
+        <Button size="lg" className="mt-12 rounded-full px-14 py-8 text-base transition-transform hover:scale-[1.03]">
+          Initialize Project
+        </Button>
+      </motion.div>
     </section>
   );
 };

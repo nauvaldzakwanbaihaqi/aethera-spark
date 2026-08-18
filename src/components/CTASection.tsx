@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const CTASection = () => {
   return (
     <section className="relative z-10 bg-background px-6 py-32">
@@ -8,9 +10,9 @@ const CTASection = () => {
         >
           Ready to automate your UI?
         </h2>
-        <button className="mt-12 rounded-full bg-primary px-14 py-5 text-base text-primary-foreground transition-transform hover:scale-[1.03]">
+        <Button size="lg" className="mt-12 rounded-full px-14 py-8 text-base transition-transform hover:scale-[1.03]">
           Initialize Project
-        </button>
+        </Button>
       </div>
     </section>
   );
