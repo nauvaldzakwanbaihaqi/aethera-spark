@@ -5,7 +5,8 @@ import VideoBackground from "@/components/VideoBackground";
 import FeaturesSection from "@/components/FeaturesSection";
 import ProcessSection from "@/components/ProcessSection";
 import StatsSection from "@/components/StatsSection";
-import TestimonialSection from "@/components/TestimonialSection";
+import WhoItIsForSection from "@/components/WhoItIsForSection";
+import PricingPreviewSection from "@/components/PricingPreviewSection";
 import CTASection from "@/components/CTASection";
 
 const LandingPage = () => {
@@ -18,7 +19,8 @@ const LandingPage = () => {
       <FeaturesSection />
       <ProcessSection />
       <StatsSection />
-      <TestimonialSection />
+      <WhoItIsForSection />
+      <PricingPreviewSection />
       <CTASection />
     </div>
   );
