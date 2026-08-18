@@ -25,7 +25,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl"
+        className="mt-6 max-w-2xl text-lg text-zinc-200 sm:text-xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] font-medium"
       >
         Aethera Spark is an intelligent design engine that transforms natural
         language into production-ready React components and design systems.
