@@ -8,6 +8,7 @@ import StatsSection from "@/components/StatsSection";
 import WhoItIsForSection from "@/components/WhoItIsForSection";
 import PricingPreviewSection from "@/components/PricingPreviewSection";
 import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
 
 const LandingPage = () => {
   return (
@@ -22,6 +23,7 @@ const LandingPage = () => {
       <WhoItIsForSection />
       <PricingPreviewSection />
       <CTASection />
+      <Footer />
     </div>
   );
 };

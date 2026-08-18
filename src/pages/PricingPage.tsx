@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import SEO from "@/components/SEO";
+import Footer from "@/components/Footer";
 
 const tiers = [
   {
@@ -73,6 +74,7 @@ export default function PricingPage() {
           ))}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

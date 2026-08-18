@@ -25,7 +25,7 @@ const tiers = [
 
 const PricingPreviewSection = () => {
   return (
-    <section id="pricing" className="relative z-10 px-6 py-32 border-t border-border/50 bg-background/50 backdrop-blur-sm">
+    <section id="pricing" className="relative z-10 px-6 py-32 md:py-44 border-t border-border/50 bg-background/50 backdrop-blur-sm">
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
           <h2 className="font-display text-4xl font-bold text-foreground">
