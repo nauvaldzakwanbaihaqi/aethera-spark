@@ -15,9 +15,9 @@ const HeroSection = () => {
         className="font-display text-5xl font-bold tracking-tight text-foreground sm:text-7xl md:text-8xl"
         style={{ lineHeight: 1.1 }}
       >
-        Neural interfaces,
+        Neural design,
         <br />
-        designed by <span className="text-primary italic">AI.</span>
+        not generic templates.
       </motion.h1>
 
       {/* Subheadline */}
