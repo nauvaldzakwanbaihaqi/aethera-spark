@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 const FeaturesSection = () => {
   return (
-    <section id="about" className="relative z-10 bg-background px-6 py-32">
+    <section id="about" className="relative z-10 px-6 py-32 bg-background/50 backdrop-blur-sm border-t border-border/50">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[280px]">
           {/* Main Feature: Neural Design Engine */}
-          <div className="md:col-span-2 md:row-span-2 rounded-3xl bg-card border border-border p-10 flex flex-col justify-between overflow-hidden relative group">
+          <div className="md:col-span-2 md:row-span-2 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors duration-300 p-10 flex flex-col justify-between overflow-hidden relative group">
             <div className="relative z-10">
               <h3 className="font-display text-3xl md:text-4xl text-foreground">
                 Neural Design Engine
@@ -34,7 +34,7 @@ const FeaturesSection = () => {
           </div>
 
           {/* Feature 2: Rapid Export */}
-          <div className="rounded-3xl bg-card border border-border p-8 flex flex-col justify-end">
+          <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors duration-300 p-8 flex flex-col justify-end">
             <h3 className="font-display text-xl text-foreground">
               Rapid Prompt-to-Code Export
             </h3>
@@ -44,7 +44,7 @@ const FeaturesSection = () => {
           </div>
 
           {/* Feature 3: Kinetic Animations */}
-          <div className="rounded-3xl bg-card border border-border p-8 flex flex-col justify-end">
+          <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors duration-300 p-8 flex flex-col justify-end">
             <h3 className="font-display text-xl text-foreground">
               Kinetic Animations
             </h3>
@@ -54,7 +54,7 @@ const FeaturesSection = () => {
           </div>
 
           {/* Feature 4: SEO Autopilot */}
-          <div className="md:col-span-3 lg:col-span-1 rounded-3xl bg-card border border-border p-8 flex flex-col justify-end">
+          <div className="md:col-span-3 lg:col-span-1 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors duration-300 p-8 flex flex-col justify-end">
             <h3 className="font-display text-xl text-foreground">
               SEO Autopilot
             </h3>

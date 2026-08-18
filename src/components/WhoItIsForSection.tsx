@@ -20,7 +20,7 @@ const personas = [
 
 const WhoItIsForSection = () => {
   return (
-    <section className="relative z-10 bg-background px-6 py-32">
+    <section className="relative z-10 px-6 py-32 bg-background/50 backdrop-blur-sm border-t border-border/50">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl text-foreground">Who is this for?</h2>
@@ -28,7 +28,7 @@ const WhoItIsForSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {personas.map((persona, index) => (
-            <div key={index} className="rounded-2xl border border-border bg-card p-8 flex flex-col gap-6">
+            <div key={index} className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-colors duration-300 p-10 flex flex-col gap-6">
               <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
                 {persona.icon}
               </div>
