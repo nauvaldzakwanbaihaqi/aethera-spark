@@ -93,6 +93,10 @@ dipakai ≥2 fitur?"
 | `/studio`, `/studio/:projectId` | `StudioPage` | Protected |
 | `/pricing` | `PricingPage` | Publik |
 
+> **Catatan Routing:** 
+> - Link navigasi seperti "About", "Journal", dan "Reach Us" BUKAN merupakan route terpisah, melainkan *in-page anchor* (misal: `#about`, `#journal`, `#contact`) yang mengarah ke *section* spesifik di dalam `LandingPage.tsx`.
+> - **Auth Guard Behavior:** Akses ke route *Protected* (`/dashboard`, `/studio`) oleh pengguna yang belum "login" (mock session token kosong) akan secara otomatis di-redirect ke `/login`. Logika ini diimplementasikan secara terpusat melalui *wrapper* `<ProtectedRoute>` di dalam `app/router.tsx`, BUKAN diduplikasi pada tiap halaman.
+
 Semua route di-*lazy load* via `React.lazy` + `<Suspense>` per halaman, dengan
 fallback skeleton — bukan spinner generik, supaya *perceived performance*
 sesuai standar "mewah" yang jadi *value prop* produk.

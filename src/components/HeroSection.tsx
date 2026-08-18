@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -36,8 +37,8 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        <Button size="lg" className="mt-12 rounded-full px-14 py-8 text-base transition-transform hover:scale-[1.03]">
-          Initialize Project
+        <Button size="lg" asChild className="mt-12 rounded-full px-14 py-8 text-base transition-transform hover:scale-[1.03]">
+          <Link to="/studio">Initialize Project</Link>
         </Button>
       </motion.div>
     </section>

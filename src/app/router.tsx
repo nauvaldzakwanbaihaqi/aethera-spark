@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import NotFound from "@/pages/NotFound";
 
 // Lazy-loaded pages
@@ -19,6 +19,15 @@ const PageSkeleton = () => (
     </div>
   </div>
 );
+
+// Auth Guard for protected routes
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+  const isAuthenticated = !!sessionStorage.getItem("aethera_token");
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+  return <>{children}</>;
+};
 
 const router = createBrowserRouter([
   {
@@ -49,25 +58,31 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      <Suspense fallback={<PageSkeleton />}>
-        <DashboardPage />
-      </Suspense>
+      <ProtectedRoute>
+        <Suspense fallback={<PageSkeleton />}>
+          <DashboardPage />
+        </Suspense>
+      </ProtectedRoute>
     ),
   },
   {
     path: "/studio",
     element: (
-      <Suspense fallback={<PageSkeleton />}>
-        <StudioPage />
-      </Suspense>
+      <ProtectedRoute>
+        <Suspense fallback={<PageSkeleton />}>
+          <StudioPage />
+        </Suspense>
+      </ProtectedRoute>
     ),
   },
   {
     path: "/studio/:projectId",
     element: (
-      <Suspense fallback={<PageSkeleton />}>
-        <StudioPage />
-      </Suspense>
+      <ProtectedRoute>
+        <Suspense fallback={<PageSkeleton />}>
+          <StudioPage />
+        </Suspense>
+      </ProtectedRoute>
     ),
   },
   {

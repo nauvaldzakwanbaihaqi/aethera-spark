@@ -15,8 +15,8 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section className="relative z-10 bg-background px-6 py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="journal" className="relative z-10 border-t border-border bg-card px-6 py-32">
+      <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
           {steps.map((step) => (
             <div key={step.number} className="border-t border-border pt-8">

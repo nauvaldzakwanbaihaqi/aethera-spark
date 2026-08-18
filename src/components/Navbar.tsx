@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const navItems = [
   { label: "Home", active: true },
@@ -19,25 +20,26 @@ const Navbar = () => {
 
         {/* Menu Items */}
         <ul className="hidden items-center gap-8 font-body text-sm md:flex">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href="#"
-                className={`transition-colors ${
-                  item.active
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
+          <li>
+            <Link to="/" className="transition-colors text-foreground">Home</Link>
+          </li>
+          <li>
+            <Link to="/studio" className="transition-colors text-muted-foreground hover:text-foreground">Studio</Link>
+          </li>
+          <li>
+            <a href="/#about" className="transition-colors text-muted-foreground hover:text-foreground">About</a>
+          </li>
+          <li>
+            <a href="/#journal" className="transition-colors text-muted-foreground hover:text-foreground">Journal</a>
+          </li>
+          <li>
+            <a href="/#contact" className="transition-colors text-muted-foreground hover:text-foreground">Reach Us</a>
+          </li>
         </ul>
 
         {/* CTA */}
-        <Button className="rounded-full px-6 text-sm transition-transform hover:scale-[1.03]">
-          Begin Journey
+        <Button asChild className="rounded-full px-6 text-sm transition-transform hover:scale-[1.03]">
+          <Link to="/register">Begin Journey</Link>
         </Button>
       </div>
     </nav>
