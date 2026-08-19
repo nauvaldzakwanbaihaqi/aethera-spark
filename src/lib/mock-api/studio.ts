@@ -12,6 +12,14 @@ export interface GenerationStatus {
   message: string;
 }
 
+const getMockDelay = (defaultMs: number) => {
+  const envDelay = import.meta.env.VITE_MOCK_DELAY_MS;
+  if (envDelay !== undefined && envDelay !== "") {
+    return Number(envDelay);
+  }
+  return defaultMs;
+};
+
 export const generateUI = async (
   input: PromptInput, 
   onProgress: (status: GenerationStatus) => void
@@ -29,10 +37,10 @@ export const generateUI = async (
         setTimeout(() => {
           onProgress({ state: "complete", message: "Generation Complete!" });
           resolve({ success: true, projectUrl: "/mock-project-url" });
-        }, 1500);
+        }, getMockDelay(1500));
         
-      }, 2000);
+      }, getMockDelay(2000));
       
-    }, 1500);
+    }, getMockDelay(1500));
   });
 };
