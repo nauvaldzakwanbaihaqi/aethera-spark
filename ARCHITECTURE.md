@@ -156,10 +156,6 @@ sesuai standar "mewah" yang jadi *value prop* produk.
 
 - **Edge-First (vision):** *deployment* klien menargetkan Edge CDN
   terdistribusi untuk TTFB minimal.
-- **Deployment v1 (rekomendasi default):** Cloudflare Pages — konsisten
-  dengan narasi "Edge-First" dan gratis untuk *static SPA*. Vercel adalah
-  alternatif setara. **Ini keputusan yang perlu kamu konfirmasi** karena
-  memengaruhi konfigurasi *rewrite* SPA (`_redirects` di Cloudflare vs
-  `vercel.json` di Vercel) untuk React Router — pilih satu sebelum Phase 4.
+- **Deployment v1 (Final Decision):** Cloudflare Pages — platform deployment resmi v1.0 yang konsisten dengan prinsip "Edge-First" (TTFB minimal via global Edge network). SPA client-side routing React Router v6 dikonfigurasi secara resmi melalui file `public/_redirects` (`/*    /index.html   200`), yang otomatis di-copy ke folder output `dist/` saat build `pnpm build`.
 - **Zero-Friction:** `pnpm install && pnpm dev` harus langsung jalan tanpa
   langkah manual tambahan.

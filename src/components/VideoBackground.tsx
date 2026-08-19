@@ -22,13 +22,13 @@ const VideoBackground = () => {
         }`}
       />
       {/* Base dark overlay to reduce overall video glare */}
-      <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/35 pointer-events-none" />
       
       {/* Center radial vignette for text emphasis */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-black/80 via-black/40 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-black/20 via-black/15 to-transparent pointer-events-none" />
 
       {/* Top to bottom gradient for navbar and section transition */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/40 to-background pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background pointer-events-none" />
     </div>
   );
 };
