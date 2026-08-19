@@ -156,6 +156,6 @@ sesuai standar "mewah" yang jadi *value prop* produk.
 
 - **Edge-First (vision):** *deployment* klien menargetkan Edge CDN
   terdistribusi untuk TTFB minimal.
-- **Deployment v1 (Final Decision):** Cloudflare Pages — platform deployment resmi v1.0 yang konsisten dengan prinsip "Edge-First" (TTFB minimal via global Edge network). SPA client-side routing React Router v6 dikonfigurasi secara resmi melalui file `public/_redirects` (`/*    /index.html   200`), yang otomatis di-copy ke folder output `dist/` saat build `pnpm build`.
+- **Deployment v1 (Final Decision):** Cloudflare Workers Static Assets (`workers.dev`) — platform deployment resmi v1.0 yang konsisten dengan prinsip "Edge-First" (TTFB minimal via global Edge network). SPA client-side routing React Router v6 dikonfigurasi murni secara otomatis via file `wrangler.jsonc` dengan Opsi Static Assets: `"assets": { "directory": "./dist", "not_found_handling": "single-page-application" }`. Tanpa adanya script server-side (`"main"` dikosongkan), Worker beroperasi murni dalam mode *static assets-only*, menyajikan `dist/index.html` dengan status HTTP 200 untuk seluruh rute SPA (seperti `/studio`, `/dashboard`, `/pricing`).
 - **Zero-Friction:** `pnpm install && pnpm dev` harus langsung jalan tanpa
   langkah manual tambahan.
