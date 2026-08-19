@@ -7,6 +7,9 @@ export class AuthPage {
   readonly passwordInput: Locator;
   readonly submitButton: Locator;
   readonly signUpLink: Locator;
+  readonly nameError: Locator;
+  readonly emailError: Locator;
+  readonly passwordError: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -15,6 +18,9 @@ export class AuthPage {
     this.passwordInput = page.locator('input[type="password"]');
     this.submitButton = page.locator('button[type="submit"]');
     this.signUpLink = page.getByRole('link', { name: /sign up/i });
+    this.nameError = page.getByTestId('error-name');
+    this.emailError = page.getByTestId('error-email');
+    this.passwordError = page.getByTestId('error-password');
   }
 
   async gotoLogin() {

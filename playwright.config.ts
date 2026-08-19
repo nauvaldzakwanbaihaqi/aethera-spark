@@ -24,7 +24,7 @@ export default defineConfig({
   webServer: {
     command: 'VITE_MOCK_DELAY_MS=100 pnpm dev --port 8080',
     url: 'http://localhost:8080',
-    reuseExistingServer: true,
+    reuseExistingServer: false,
     stdout: 'ignore',
     stderr: 'pipe',
   },

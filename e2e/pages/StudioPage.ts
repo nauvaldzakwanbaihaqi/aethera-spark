@@ -31,4 +31,14 @@ export class StudioPage {
     await expect(this.successMessage).toBeVisible({ timeout: 10000 });
     await expect(this.exportButton).toBeEnabled();
   }
+
+  async clickExport() {
+    await this.exportButton.click();
+  }
+
+  async exportAndDownload() {
+    const downloadPromise = this.page.waitForEvent('download');
+    await this.clickExport();
+    return await downloadPromise;
+  }
 }

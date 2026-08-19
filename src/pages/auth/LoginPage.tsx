@@ -38,7 +38,7 @@ export default function LoginPage() {
           </p>
         </div>
         
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
@@ -50,7 +50,7 @@ export default function LoginPage() {
                 className="bg-card"
                 {...register("email")}
               />
-              {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
+              {errors.email && <p data-testid="error-email" className="text-sm text-destructive">{errors.email.message}</p>}
             </div>
             
             <div className="space-y-2">
@@ -62,7 +62,7 @@ export default function LoginPage() {
                 className="bg-card"
                 {...register("password")}
               />
-              {errors.password && <p className="text-sm text-destructive">{errors.password.message}</p>}
+              {errors.password && <p data-testid="error-password" className="text-sm text-destructive">{errors.password.message}</p>}
             </div>
           </div>
 

@@ -74,14 +74,15 @@ message atau catatan PR kenapa struktur existing tidak cukup.
 
 ## 7. Testing (Wajib untuk Critical Path)
 
-- Unit test: Vitest + React Testing Library, minimal untuk `schemas/`, `hooks/`,
-  dan `lib/`.
-- Form kritis (Login, Register, Prompt Studio) wajib punya test untuk: validasi
-  gagal menampilkan error yang benar, submit sukses memanggil handler yang benar.
-- E2E (Playwright) opsional di v1, tapi kalau ditambahkan, cover satu smoke path:
-  landing → register (mock) → dashboard → studio submit prompt (mock).
-- Jangan skip test demi kecepatan generate — test yang gagal harus diperbaiki di
-  turn yang sama, bukan ditandai `.skip()`.
+- **Unit test:** Vitest + React Testing Library, minimal untuk `schemas/`, `hooks/`, dan `lib/`.
+- **Form kritis:** Login, Register, dan Prompt Studio wajib punya test untuk validasi gagal (pesan error Zod) dan submit sukses.
+- **E2E (Playwright):** 
+  - Jalankan dengan `pnpm test:e2e` (menggunakan Chromium & auto-webServer di port 8080).
+  - **Page Object Model (POM):** Semua interaksi elemen E2E dipisahkan di `e2e/pages/` (`LandingPage.ts`, `AuthPage.ts`, `DashboardPage.ts`, `StudioPage.ts`).
+  - **Locators & `data-testid`:** Elemen UI dinamis dan error message Zod wajib menggunakan `data-testid` (contoh: `data-testid="error-name"`, `data-testid="error-email"`) untuk selector test yang stabil dan tahan refactoring.
+  - **Configurable Mock Delays:** Simulasi async di `lib/mock-api/` menggunakan `VITE_MOCK_DELAY_MS`. Dalam mode E2E test, delay ini diset 100ms agar test berjalan cepat tanpa mengabaikan verifikasi *loading/progress state*.
+  - **Assertion Download:** Fitur export wajib diverifikasi hingga *event browser download* sungguhan (`page.waitForEvent('download')`), bukan sekadar cek tombol enabled.
+- **Rules:** Jangan skip test demi kecepatan generate — test yang gagal harus diperbaiki di turn yang sama, bukan ditandai `.skip()`.
 
 ## 8. Accessibility & Performance
 

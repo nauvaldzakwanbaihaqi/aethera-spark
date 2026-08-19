@@ -13,7 +13,31 @@ test.describe('Aethera Spark Critical Path Smoke Test', () => {
     await expect(page).toHaveURL(/\/login/);
   });
 
-  test('Complete Critical Path: Landing -> Auth -> Dashboard -> Studio AI Generation', async ({ page }) => {
+  test('Register form validation shows Zod errors on invalid input and prevents redirect', async ({ page }) => {
+    const authPage = new AuthPage(page);
+
+    await authPage.gotoRegister();
+    await expect(page).toHaveURL(/\/register/);
+
+    // Submit with short name ('a'), invalid email ('invalid-email'), and short password ('123')
+    await authPage.fillRegisterForm('a', 'invalid-email', '123');
+    await authPage.submit();
+
+    // Assert Zod validation error messages appear in the UI via data-testid
+    await expect(authPage.nameError).toBeVisible();
+    await expect(authPage.nameError).toHaveText(/at least 2 characters/i);
+
+    await expect(authPage.emailError).toBeVisible();
+    await expect(authPage.emailError).toHaveText(/invalid email address/i);
+
+    await expect(authPage.passwordError).toBeVisible();
+    await expect(authPage.passwordError).toHaveText(/at least 8 characters/i);
+
+    // Assert user is NOT redirected to dashboard and remains on /register
+    await expect(page).toHaveURL(/\/register/);
+  });
+
+  test('Complete Critical Path: Landing -> Auth -> Dashboard -> Studio AI Generation -> Code Export', async ({ page }) => {
     const landingPage = new LandingPage(page);
     const authPage = new AuthPage(page);
     const dashboardPage = new DashboardPage(page);
@@ -40,5 +64,9 @@ test.describe('Aethera Spark Critical Path Smoke Test', () => {
 
     // 4. Verify AI Generation Completion & Preview Output
     await studioPage.expectSuccess();
+
+    // 5. Verify Real Browser File Download Event on Code Export
+    const download = await studioPage.exportAndDownload();
+    expect(download.suggestedFilename()).toBe('aethera-project.zip');
   });
 });
